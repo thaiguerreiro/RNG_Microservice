@@ -10,10 +10,14 @@ def generate_random():
     max = request.args.get('max', type=int)
 
     # Validate inputs
+    if min is None or max is None:
+        return jsonify({"error": "Both 'min' and 'max' parameters are required"}), 400
 
+    if min >= max:
+        return jsonify({"error": "'min' parameter must be less than 'max' parameter"}), 400
 
     # Generate output
-    result = 
+    result = random.randint(min, max)
 
     # Return result as JSON
     return jsonify({"result": result})
