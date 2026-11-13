@@ -6,8 +6,8 @@ app = Flask(__name__)
 @app.route('/random', methods=['GET'])
 def generate_random():
     # Receive bounds from the request
-    lower = request.args.get('lower', type=int)
-    upper = request.args.get('upper', type=int)
+    min = request.args.get('min', type=int)
+    max = request.args.get('max', type=int)
 
     # Validate inputs
 
