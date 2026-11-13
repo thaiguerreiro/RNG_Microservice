@@ -1,0 +1,1 @@
+When called by a client and given minimum and maximum values, this microservice will return a random number within the given range.
