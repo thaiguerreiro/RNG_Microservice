@@ -16,4 +16,23 @@ data = response.json()
 number = data["result"]
 
 
-UML sequence diagram
+UML Sequence Diagram 
+Client                         RNG_Microservice
+  |                                   |
+  |     GET /random?min=1&max=100     |
+  |---------------------------------->|
+  |                                   |
+  |                           Read min and max
+  |                                   |
+  |                        Generate random number
+  |                                   |
+  |                         Create JSON response
+  |                                   |
+  |            HTTP 200 OK            |
+  |           {"number": 89}          |
+  |<----------------------------------|
+  |                                   |
+  |  Read JSON response               |
+  |  Extract "number"                 |
+  |                                   |
+  |                                   |
