@@ -15,26 +15,29 @@ Take the data from the response and interpret it.
 data = response.json()
 number = data["result"]
 
-
+```
 UML Sequence Diagram 
-Client                         RNG_Microservice
-  |                                   |
-  |     GET /random?min=1&max=100     |
-  |---------------------------------->|
-  |                                   |
-  |                           Read min and max
-  |                                   |
-  |                          Validate Parameters
-  |                                   |
-  |                        Generate random number
-  |                                   |
-  |                         Create JSON response
-  |                                   |
-  |            HTTP 200 OK            |
-  |           {"number": 89}          |
-  |<- - - - - - - - - - - - - - - - - |
-  |                                   |
-  |  Read JSON response               |
-  |  Extract "number"                 |
-  |                                   |
-  |                                   |
+Client                           RNG_Microservice
++-+                                     |
+| |                                     |
+| |      GET /random?min=1&max=100     +-+ 
+| | ——————————————————————————————————>| | 
+| |                                    | | 
+| |                              Read min and max
+| |                                    | | 
+| |                             Validate Parameters
+| |                                    | | 
+| |                           Generate random number
+| |                                    | | 
+| |                            Create JSON response
+| |                                    | | 
+| |             HTTP 200 OK            | | 
+| |           {"number": 89}           | | 
+| | <- - - - - - - - - - - - - - - - - | | 
+| |                                    +-+ 
+| |   Read JSON response                |
+| |   Extract "number"                  | 
+| |                                     |
+| |                                     |
++-+                                 
+```
