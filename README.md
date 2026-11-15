@@ -24,13 +24,15 @@ Client                         RNG_Microservice
   |                                   |
   |                           Read min and max
   |                                   |
+  |                          Validate Parameters
+  |                                   |
   |                        Generate random number
   |                                   |
   |                         Create JSON response
   |                                   |
   |            HTTP 200 OK            |
   |           {"number": 89}          |
-  |<----------------------------------|
+  |<- - - - - - - - - - - - - - - - - |
   |                                   |
   |  Read JSON response               |
   |  Extract "number"                 |
