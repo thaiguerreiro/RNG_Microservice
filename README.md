@@ -19,9 +19,8 @@ number = data["result"]
 UML Sequence Diagram 
 Client                           RNG_Microservice
 +-+                                     |
-| |                                     |
-| |      GET /random?min=1&max=100     +-+ 
-| | ——————————————————————————————————>| | 
+| |      GET /random?min=1&max=100      |
+| | ——————————————————————————————————>+-+  
 | |                                    | | 
 | |                              Read min and max
 | |                                    | | 
@@ -33,8 +32,8 @@ Client                           RNG_Microservice
 | |                                    | | 
 | |             HTTP 200 OK            | | 
 | |           {"number": 89}           | | 
-| | <- - - - - - - - - - - - - - - - - | | 
-| |                                    +-+ 
+| | <- - - - - - - - - - - - - - - - - +-+ 
+| |                                     |
 | |   Read JSON response                |
 | |   Extract "number"                  | 
 | |                                     |
