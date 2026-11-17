@@ -2,6 +2,7 @@ When called by a client and given minimum and maximum values, this microservice 
 
 
 How to REQUEST data
+To run server, install flask with 'pip install flask'
 Define the parameters, then form a get request from the server.
 
 import requests
